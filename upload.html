@@ -1,0 +1,85 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Choose Image</title>
+  <link rel="stylesheet" href="upload.css" />
+</head>
+<body>
+
+  <div class="phone">
+
+    <!-- เมนูบน -->
+    <header class="topbar">
+      <img src="Mymelodyypic/bowpink.png" alt="bow" class="topbar__bow">
+      <nav class="topnav">
+        <a href="menu.html" class="nav-item">menu</a>
+        <a href="upload.html" class="nav-item active">choose image</a>
+        <a href="#" class="nav-item">pick up</a>
+      </nav>
+    </header>
+
+    <!-- กรอบใหญ่กลาง -->
+    <div class="frame">
+      <div class="choose-wrapper">
+        <div class="grid">
+
+          <div class="slot" data-id="1">
+            <span class="plus">+</span>
+            <p>Picture 1</p>
+            <img class="preview" id="img1">
+          </div>
+
+          <div class="slot" data-id="2">
+            <span class="plus">+</span>
+            <p>Picture 2</p>
+            <img class="preview" id="img2">
+          </div>
+
+          <div class="slot" data-id="3">
+            <span class="plus">+</span>
+            <p>Picture 3</p>
+            <img class="preview" id="img3">
+          </div>
+
+          <div class="slot" data-id="4">
+            <span class="plus">+</span>
+            <p>Picture 4</p>
+            <img class="preview" id="img4">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <input type="file" accept="image/*" id="filePicker" hidden>
+
+  <script>
+    const filePicker = document.getElementById("filePicker");
+    let currentSlot = null;
+
+    document.querySelectorAll(".slot").forEach(slot => {
+      slot.addEventListener("click", () => {
+        currentSlot = slot.dataset.id;
+        filePicker.click();
+      });
+    });
+
+    filePicker.addEventListener("change", () => {
+      const file = filePicker.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = document.getElementById("img" + currentSlot);
+        img.src = e.target.result;
+        img.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
+
+</body>
+</html>
