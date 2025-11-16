@@ -1,0 +1,99 @@
+/* กรอบมือถือ */
+.phone{
+  width: 430px;
+  min-height: 100vh;
+  background: #ffeaf3;
+  padding: 20px;
+  border-radius: 40px;
+  margin: 0 auto;
+}
+
+/* เมนูบน */
+.topbar{
+  background: #ffffff;
+  border: 2px solid #deb8c8;
+  border-radius: 16px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.topbar__bow
+{ position:absolute; left:40% ; transform:translateY(-50%); width:55px; height:auto; }
+
+.topnav{
+  display: flex;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-item{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #5a3d48;
+}
+
+.nav-item.active{
+  background: radial-gradient(circle, #ffd2e6, transparent 65%);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+/* กรอบใหญ่กลาง */
+.frame{
+  background: #ffdce9;
+  padding: 40px 20px;
+  border-radius: 28px;
+  border: 2px solid #d4a0b4;
+}
+
+/* กลุ่ม 4 ช่อง */
+.choose-wrapper{
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.slot{
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  background: radial-gradient(circle, #ffb9d1, #ffdbe9 70%);
+  border: 2px dashed #c58fa7;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.plus{
+  font-size: 22px;
+  color: #444;
+}
+
+.slot p{
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.preview{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  border-radius: 20px;
+}
